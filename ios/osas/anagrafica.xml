@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuestionarioModulo IdModulo="ANAGRAFICA" Descrizione="Dati Anagrafici" Tipologia="Anagrafica">
+  <QuestionarioGruppi>
+    <QuestionarioGruppo IdGruppo="0" IdModulo="ANAGRAFICA" Descrizione="Dati personali" Ordine="0">
+      <QuestionarioDomande>
+        <QuestionarioDomanda IdDomanda="1" IdGruppo="0" Testo="Nome" Ordine="0" Tendina="false" Obbligatorio="true" Tipo="text" />
+        <QuestionarioDomanda IdDomanda="2" IdGruppo="0" Testo="Cognome" Ordine="1" Tendina="false" Obbligatorio="true" Tipo="text" />
+        <QuestionarioDomanda IdDomanda="3" IdGruppo="0" Testo="Codice Fiscale" Ordine="2" Tendina="false" Obbligatorio="true" Tipo="text" />
+        <QuestionarioDomanda IdDomanda="4" IdGruppo="0" Testo="Data di nascita" Ordine="3" Tendina="false" Obbligatorio="true" Tipo="date" />
+        <QuestionarioDomanda IdDomanda="5" IdGruppo="0" Testo="Sesso" Ordine="4" Tendina="true" Obbligatorio="true" Tipo="select">
+          <RisposteElenco>
+            <RispostaElenco IdRisposta="1" IdDomanda="5" Testo="Maschio" Ordine="0" />
+            <RispostaElenco IdRisposta="2" IdDomanda="5" Testo="Femmina" Ordine="1" />
+          </RisposteElenco>
+        </QuestionarioDomanda>
+        <QuestionarioDomanda IdDomanda="6" IdGruppo="0" Testo="Peso (kg)" Ordine="5" Tendina="false" Obbligatorio="true" Tipo="number" />
+        <QuestionarioDomanda IdDomanda="7" IdGruppo="0" Testo="Altezza (cm)" Ordine="6" Tendina="false" Obbligatorio="true" Tipo="number" />
+        <QuestionarioDomanda IdDomanda="8" IdGruppo="0" Testo="Luogo di nascita" Ordine="7" Tendina="false" Obbligatorio="false" Tipo="text" />
+        <QuestionarioDomanda IdDomanda="9" IdGruppo="0" Testo="Sei in dolce attesa?" Ordine="8" Tendina="true" Obbligatorio="false" Tipo="select" Condizione="Sesso == Femmina">
+          <RisposteElenco>
+            <RispostaElenco IdRisposta="3" IdDomanda="9" Testo="Sì" Ordine="0" />
+            <RispostaElenco IdRisposta="4" IdDomanda="9" Testo="No" Ordine="1" />
+            <RispostaElenco IdRisposta="5" IdDomanda="9" Testo="Non so" Ordine="2" />
+          </RisposteElenco>
+        </QuestionarioDomanda>
+        <QuestionarioDomanda IdDomanda="10" IdGruppo="0" Testo="Fumi?" Ordine="9" Tendina="true" Obbligatorio="true" Tipo="select">
+          <RisposteElenco>
+            <RispostaElenco IdRisposta="6" IdDomanda="10" Testo="Mai fumato" Ordine="0" />
+            <RispostaElenco IdRisposta="7" IdDomanda="10" Testo="Ex fumatore" Ordine="1" />
+            <RispostaElenco IdRisposta="8" IdDomanda="10" Testo="Occasionalmente" Ordine="2" />
+            <RispostaElenco IdRisposta="9" IdDomanda="10" Testo="Quotidianamente" Ordine="3" />
+          </RisposteElenco>
+        </QuestionarioDomanda>
+        <QuestionarioDomanda IdDomanda="11" IdGruppo="0" Testo="Consumi alcolici?" Ordine="10" Tendina="true" Obbligatorio="true" Tipo="select">
+          <RisposteElenco>
+            <RispostaElenco IdRisposta="10" IdDomanda="11" Testo="Mai" Ordine="0" />
+            <RispostaElenco IdRisposta="11" IdDomanda="11" Testo="Occasionalmente" Ordine="1" />
+            <RispostaElenco IdRisposta="12" IdDomanda="11" Testo="Regolarmente" Ordine="2" />
+            <RispostaElenco IdRisposta="13" IdDomanda="11" Testo="Quotidianamente" Ordine="3" />
+          </RisposteElenco>
+        </QuestionarioDomanda>
+        <QuestionarioDomanda IdDomanda="12" IdGruppo="0" Testo="Pratici attività fisica?" Ordine="11" Tendina="true" Obbligatorio="true" Tipo="select">
+          <RisposteElenco>
+            <RispostaElenco IdRisposta="14" IdDomanda="12" Testo="Mai" Ordine="0" />
+            <RispostaElenco IdRisposta="15" IdDomanda="12" Testo="1-2 volte a settimana" Ordine="1" />
+            <RispostaElenco IdRisposta="16" IdDomanda="12" Testo="3-4 volte a settimana" Ordine="2" />
+            <RispostaElenco IdRisposta="17" IdDomanda="12" Testo="5+ volte a settimana" Ordine="3" />
+          </RisposteElenco>
+        </QuestionarioDomanda>
+        <QuestionarioDomanda IdDomanda="13" IdGruppo="0" Testo="Quante tazze di caffè al giorno?" Ordine="12" Tendina="false" Obbligatorio="false" Tipo="number" />
+      </QuestionarioDomande>
+    </QuestionarioGruppo>
+  </QuestionarioGruppi>
+</QuestionarioModulo>

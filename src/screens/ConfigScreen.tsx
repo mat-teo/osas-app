@@ -15,8 +15,8 @@ import {
 import DateTimePicker from '@react-native-community/datetimepicker';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
-import { RootStackParamList } from '../../App';
-import { ProfiloService, Profilo } from '../services/api';
+import { RootStackParamList } from '../navigation/types';
+import { PatientService, Patient } from '../services/api';
 import { DeviceService } from '../services/deviceService';
 import { useAppContext } from '../context/AppContext';
 
@@ -24,70 +24,67 @@ type ConfigScreenNavigationProp = StackNavigationProp<RootStackParamList, 'Confi
 
 const ConfigScreen = () => {
   const navigation = useNavigation<ConfigScreenNavigationProp>();
-  const { setProfile, setProfileId } = useAppContext();
+  const { setProfile } = useAppContext();
 
-  // Stato per la lista profili
-  const [profili, setProfili] = useState<Profilo[]>([]);
-  const [isLoadingProfili, setIsLoadingProfili] = useState(true);
+  // Stato per la lista pazienti
+  const [patients, setPatients] = useState<Patient[]>([]);
+  const [isLoadingPatients, setIsLoadingPatients] = useState(true);
   const [showForm, setShowForm] = useState(false);
 
   // Stato per il form
-  const [nome, setNome] = useState('');
-  const [cognome, setCognome] = useState('');
-  const [sesso, setSesso] = useState('maschio');
-  const [dataNascita, setDataNascita] = useState(new Date(2000, 0, 1));
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [gender, setGender] = useState('maschio');
+  const [birthDate, setBirthDate] = useState(new Date(2000, 0, 1));
   const [showDatePicker, setShowDatePicker] = useState(false);
-  const [showSessoPicker, setShowSessoPicker] = useState(false);
-  const [altezza, setAltezza] = useState('');
-  const [peso, setPeso] = useState('');
+  const [showGenderPicker, setShowGenderPicker] = useState(false);
+  const [heightCm, setHeightCm] = useState('');
+  const [weightKg, setWeightKg] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
-  // Carica profili all'avvio
+  // Carica pazienti all'avvio
   useEffect(() => {
-    loadProfili();
+    loadPatients();
   }, []);
 
-  const loadProfili = async () => {
-    setIsLoadingProfili(true);
+  const loadPatients = async () => {
+    setIsLoadingPatients(true);
     try {
       const deviceId = await DeviceService.getDeviceId();
-      const data = await ProfiloService.fetchProfili(deviceId);
-      setProfili(data);
-      // Se non ci sono profili, mostra il form
+      const data = await PatientService.fetchPatients(deviceId);
+      setPatients(data);
       if (data.length === 0) {
         setShowForm(true);
       }
     } catch (error) {
-      console.error('Errore caricamento profili:', error);
+      console.error('Errore caricamento pazienti:', error);
     } finally {
-      setIsLoadingProfili(false);
+      setIsLoadingPatients(false);
     }
   };
 
-  const handleSelectProfile = (profilo: Profilo) => {
-    setProfile(profilo);
-    setProfileId(profilo.id!);
-    navigation.navigate('Connect', { profileId: profilo.id });
+  const handleSelectPatient = (patient: Patient) => {
+    setProfile(patient);
+    navigation.navigate('Connect', { profileId: patient.id });
   };
 
   const handleCreateNew = () => {
     setShowForm(true);
-    // Reset form
-    setNome('');
-    setCognome('');
-    setSesso('maschio');
-    setDataNascita(new Date(2000, 0, 1));
-    setAltezza('');
-    setPeso('');
+    setFirstName('');
+    setLastName('');
+    setGender('maschio');
+    setBirthDate(new Date(2000, 0, 1));
+    setHeightCm('');
+    setWeightKg('');
   };
 
   const isValid = () => {
-    if (!nome.trim()) { Alert.alert('Errore', 'Inserisci il nome'); return false; }
-    if (!cognome.trim()) { Alert.alert('Errore', 'Inserisci il cognome'); return false; }
-    const h = parseFloat(altezza);
-    const p = parseFloat(peso);
+    if (!firstName.trim()) { Alert.alert('Errore', 'Inserisci il nome'); return false; }
+    if (!lastName.trim()) { Alert.alert('Errore', 'Inserisci il cognome'); return false; }
+    const h = parseFloat(heightCm);
+    const w = parseFloat(weightKg);
     if (isNaN(h) || h <= 0 || h > 250) { Alert.alert('Errore', 'Altezza non valida (1-250 cm)'); return false; }
-    if (isNaN(p) || p <= 0 || p > 300) { Alert.alert('Errore', 'Peso non valido (1-300 kg)'); return false; }
+    if (isNaN(w) || w <= 0 || w > 300) { Alert.alert('Errore', 'Peso non valido (1-300 kg)'); return false; }
     return true;
   };
 
@@ -97,28 +94,26 @@ const ConfigScreen = () => {
     setIsLoading(true);
     try {
       const deviceId = await DeviceService.getDeviceId();
-      const dateStr = dataNascita.toISOString().split('T')[0];
+      const dateStr = birthDate.toISOString().split('T')[0];
 
-      const nuovoProfilo = {
-        id: -1,
-        nome: nome.trim(),
-        cognome: cognome.trim(),
-        sesso,
-        data_nascita: dateStr,
-        altezza: parseFloat(altezza),
-        peso: parseFloat(peso),
-        deviceId,
+      const newPatient = {
+        first_name: firstName.trim(),
+        last_name: lastName.trim(),
+        gender,
+        birth_date: dateStr,
+        height_cm: parseFloat(heightCm),
+        weight_kg: parseFloat(weightKg),
+        device_id: deviceId,
       };
 
-      const newId = await ProfiloService.addProfilo(nuovoProfilo);
+      const newId = await PatientService.addPatient(newPatient);
       
       if (newId > 0) {
-        Alert.alert('Successo', 'Profilo creato con successo!');
-        // Ricarica la lista e torna alla selezione
-        await loadProfili();
+        Alert.alert('Successo', 'Paziente creato con successo!');
+        await loadPatients();
         setShowForm(false);
       } else {
-        Alert.alert('Errore', 'Errore durante il salvataggio del profilo.');
+        Alert.alert('Errore', 'Errore durante il salvataggio.');
       }
     } catch (error) {
       console.error(error);
@@ -128,18 +123,16 @@ const ConfigScreen = () => {
     }
   };
 
-  // Schermata di caricamento
-  if (isLoadingProfili) {
+  if (isLoadingPatients) {
     return (
       <View style={[styles.container, styles.center]}>
         <ActivityIndicator size="large" color="#6C63FF" />
-        <Text style={styles.loadingText}>Caricamento profili...</Text>
+        <Text style={styles.loadingText}>Caricamento pazienti...</Text>
       </View>
     );
   }
 
-  // Schermata lista profili (se ci sono profili e non stiamo creando)
-  if (!showForm && profili.length > 0) {
+  if (!showForm && patients.length > 0) {
     return (
       <View style={styles.container}>
         <View style={styles.header}>
@@ -148,20 +141,20 @@ const ConfigScreen = () => {
         </View>
 
         <FlatList
-          data={profili}
-          keyExtractor={(item) => item.id!.toString()}
+          data={patients}
+          keyExtractor={(item) => item.id.toString()}
           renderItem={({ item }) => (
             <TouchableOpacity
-              style={styles.profileItem}
-              onPress={() => handleSelectProfile(item)}
+              style={styles.patientItem}
+              onPress={() => handleSelectPatient(item)}
             >
               <View>
-                <Text style={styles.profileName}>{item.nome} {item.cognome}</Text>
-                <Text style={styles.profileDetails}>
-                  {item.sesso} • {item.altezza}cm • {item.peso}kg
+                <Text style={styles.patientName}>{item.first_name} {item.last_name}</Text>
+                <Text style={styles.patientDetails}>
+                  {item.gender} • {item.height_cm}cm • {item.weight_kg}kg
                 </Text>
               </View>
-              <Text style={styles.profileArrow}>›</Text>
+              <Text style={styles.patientArrow}>›</Text>
             </TouchableOpacity>
           )}
           contentContainerStyle={styles.listContent}
@@ -177,7 +170,6 @@ const ConfigScreen = () => {
     );
   }
 
-  // Form di creazione
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.formContent}>
       <View style={styles.formHeader}>
@@ -188,79 +180,75 @@ const ConfigScreen = () => {
       </View>
 
       <View style={styles.form}>
-        {/* Nome */}
         <View style={styles.field}>
           <Text style={styles.label}>Nome *</Text>
           <TextInput
             style={styles.input}
-            value={nome}
-            onChangeText={setNome}
+            value={firstName}
+            onChangeText={setFirstName}
             placeholder="Inserisci il nome"
           />
         </View>
 
-        {/* Cognome */}
         <View style={styles.field}>
           <Text style={styles.label}>Cognome *</Text>
           <TextInput
             style={styles.input}
-            value={cognome}
-            onChangeText={setCognome}
+            value={lastName}
+            onChangeText={setLastName}
             placeholder="Inserisci il cognome"
           />
         </View>
 
-        {/* Sesso */}
         <View style={styles.field}>
           <Text style={styles.label}>Sesso *</Text>
           <TouchableOpacity
             style={styles.pickerButton}
-            onPress={() => setShowSessoPicker(true)}
+            onPress={() => setShowGenderPicker(true)}
           >
             <Text style={styles.pickerButtonText}>
-              {sesso === 'maschio' ? '👨 Maschio' : '👩 Femmina'}
+              {gender === 'maschio' ? '👨 Maschio' : '👩 Femmina'}
             </Text>
             <Text style={styles.pickerArrow}>▼</Text>
           </TouchableOpacity>
         </View>
 
-        {/* Modal Sesso */}
         <Modal
-          visible={showSessoPicker}
+          visible={showGenderPicker}
           transparent={true}
           animationType="fade"
-          onRequestClose={() => setShowSessoPicker(false)}
+          onRequestClose={() => setShowGenderPicker(false)}
         >
           <TouchableOpacity
             style={styles.modalOverlay}
             activeOpacity={1}
-            onPress={() => setShowSessoPicker(false)}
+            onPress={() => setShowGenderPicker(false)}
           >
             <View style={styles.modalContent}>
               <Text style={styles.modalTitle}>Seleziona il sesso</Text>
               <TouchableOpacity
-                style={[styles.modalOption, sesso === 'maschio' && styles.modalOptionSelected]}
+                style={[styles.modalOption, gender === 'maschio' && styles.modalOptionSelected]}
                 onPress={() => {
-                  setSesso('maschio');
-                  setShowSessoPicker(false);
+                  setGender('maschio');
+                  setShowGenderPicker(false);
                 }}
               >
                 <Text style={styles.modalOptionText}>👨 Maschio</Text>
-                {sesso === 'maschio' && <Text style={styles.modalCheck}>✓</Text>}
+                {gender === 'maschio' && <Text style={styles.modalCheck}>✓</Text>}
               </TouchableOpacity>
               <TouchableOpacity
-                style={[styles.modalOption, sesso === 'femmina' && styles.modalOptionSelected]}
+                style={[styles.modalOption, gender === 'femmina' && styles.modalOptionSelected]}
                 onPress={() => {
-                  setSesso('femmina');
-                  setShowSessoPicker(false);
+                  setGender('femmina');
+                  setShowGenderPicker(false);
                 }}
               >
                 <Text style={styles.modalOptionText}>👩 Femmina</Text>
-                {sesso === 'femmina' && <Text style={styles.modalCheck}>✓</Text>}
+                {gender === 'femmina' && <Text style={styles.modalCheck}>✓</Text>}
               </TouchableOpacity>
               <TouchableOpacity
                 style={styles.modalCancel}
-                onPress={() => setShowSessoPicker(false)}
+                onPress={() => setShowGenderPicker(false)}
               >
                 <Text style={styles.modalCancelText}>Annulla</Text>
               </TouchableOpacity>
@@ -268,7 +256,6 @@ const ConfigScreen = () => {
           </TouchableOpacity>
         </Modal>
 
-        {/* Data di nascita */}
         <View style={styles.field}>
           <Text style={styles.label}>Data di nascita *</Text>
           <TouchableOpacity
@@ -276,43 +263,41 @@ const ConfigScreen = () => {
             onPress={() => setShowDatePicker(true)}
           >
             <Text style={styles.dateButtonText}>
-              {dataNascita.toLocaleDateString('it-IT')}
+              {birthDate.toLocaleDateString('it-IT')}
             </Text>
           </TouchableOpacity>
           {showDatePicker && (
             <DateTimePicker
-              value={dataNascita}
+              value={birthDate}
               mode="date"
               display="default"
               onChange={(event, selectedDate) => {
                 setShowDatePicker(false);
                 if (selectedDate) {
-                  setDataNascita(selectedDate);
+                  setBirthDate(selectedDate);
                 }
               }}
             />
           )}
         </View>
 
-        {/* Altezza */}
         <View style={styles.field}>
           <Text style={styles.label}>Altezza (cm) *</Text>
           <TextInput
             style={styles.input}
-            value={altezza}
-            onChangeText={setAltezza}
+            value={heightCm}
+            onChangeText={setHeightCm}
             placeholder="es. 175"
             keyboardType="numeric"
           />
         </View>
 
-        {/* Peso */}
         <View style={styles.field}>
           <Text style={styles.label}>Peso (kg) *</Text>
           <TextInput
             style={styles.input}
-            value={peso}
-            onChangeText={setPeso}
+            value={weightKg}
+            onChangeText={setWeightKg}
             placeholder="es. 70"
             keyboardType="numeric"
           />
@@ -366,7 +351,7 @@ const styles = StyleSheet.create({
     padding: 20,
     paddingTop: 12,
   },
-  profileItem: {
+  patientItem: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
@@ -380,17 +365,17 @@ const styles = StyleSheet.create({
     shadowRadius: 4,
     elevation: 1,
   },
-  profileName: {
+  patientName: {
     fontSize: 18,
     fontWeight: '600',
     color: '#333',
   },
-  profileDetails: {
+  patientDetails: {
     fontSize: 14,
     color: '#888',
     marginTop: 2,
   },
-  profileArrow: {
+  patientArrow: {
     fontSize: 24,
     color: '#ccc',
   },

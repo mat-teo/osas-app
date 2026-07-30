@@ -1,4 +1,4 @@
-/// src/screens/HomeScreen.tsx
+// src/screens/HomeScreen.tsx
 import React, { useState, useEffect } from 'react';
 import {
   View,
@@ -10,11 +10,11 @@ import {
   TouchableOpacity,
   Alert,
 } from 'react-native';
-import { useRoute, useNavigation } from '@react-navigation/native'; // <- aggiungi useNavigation
+import { useRoute, useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
-import { RootStackParamList } from '../../App'; // <- importa il tipo
+import { RootStackParamList } from '../navigation/types';
 import { bleService, DeviceStatus } from '../services/bleService';
-import { ProfiloService } from '../services/api';
+import { PatientService } from '../services/api';
 import { useAppContext } from '../context/AppContext';
 import { QueueService } from '../services/queueService';
 
@@ -28,14 +28,15 @@ type SleepData = {
   naw: number;
   sleep_latency: number;
   date: string;
+  weight_kg?: number;
+  height_cm?: number;
 };
 
 const HomeScreen = () => {
   const route = useRoute();
   const { profileId, clearProfile } = useAppContext();
   const serial = (route.params as any)?.serial || 'Braccialetto';
-
-  const navigation = useNavigation<HomeScreenNavigationProp>(); 
+  const navigation = useNavigation<HomeScreenNavigationProp>();
 
   const [deviceStatus, setDeviceStatus] = useState<DeviceStatus>(bleService.getStatus());
   const [statusMessage, setStatusMessage] = useState(bleService.statusMessage);
@@ -68,7 +69,7 @@ const HomeScreen = () => {
   const loadSleepData = async (patientId: number) => {
     setIsLoadingSleep(true);
     try {
-      const data = await ProfiloService.fetchLastSleepData(patientId);
+      const data = await PatientService.fetchLastSleepData(patientId);
       setSleepData(data);
     } catch (error) {
       console.error('Errore caricamento sonno:', error);
@@ -116,7 +117,6 @@ const HomeScreen = () => {
     return { label: 'Connesso', color: '#4CAF50', icon: '🟢' };
   };
 
-  // Aggiungi questo metodo
   const handleDisconnect = () => {
     Alert.alert(
       'Disconnetti dispositivo',
@@ -127,15 +127,12 @@ const HomeScreen = () => {
           text: 'Disconnetti', 
           style: 'destructive',
           onPress: async () => {
-            // Disconnetti BLE
             bleService.disconnect();
-            // Rimuovi il profilo salvato
             await clearProfile();
-            // Resetta la navigazione a ConfigScreen
-            navigation.reset({
+           /* navigation.reset({
               index: 0,
               routes: [{ name: 'Config' }],
-            });
+            });*/
           }
         }
       ]
@@ -226,6 +223,11 @@ const HomeScreen = () => {
               </View>
             </View>
             <Text style={styles.sleepDate}>📅 {sleepData.date}</Text>
+            {sleepData.weight_kg && sleepData.height_cm && (
+              <Text style={styles.patientInfo}>
+                📏 {sleepData.height_cm}cm • ⚖️ {sleepData.weight_kg}kg
+              </Text>
+            )}
           </>
         ) : (
           <Text style={styles.noDataText}>
@@ -242,6 +244,13 @@ const HomeScreen = () => {
           </Text>
         </View>
       )}
+
+      <TouchableOpacity 
+        style={styles.disconnectButton} 
+        onPress={handleDisconnect}
+      >
+        <Text style={styles.disconnectButtonText}>🔌 Disconnetti dispositivo</Text>
+      </TouchableOpacity>
     </ScrollView>
   );
 };
@@ -387,6 +396,13 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginTop: 4,
   },
+  patientInfo: {
+    fontSize: 13,
+    color: '#718096',
+    textAlign: 'center',
+    marginTop: 4,
+    fontWeight: '500',
+  },
   noDataText: {
     fontSize: 14,
     color: '#a0aec0',
@@ -405,6 +421,18 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: '#744210',
     fontWeight: '500',
+  },
+  disconnectButton: {
+    backgroundColor: '#f44336',
+    borderRadius: 8,
+    padding: 16,
+    alignItems: 'center',
+    marginTop: 16,
+  },
+  disconnectButtonText: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: 'bold',
   },
 });
 

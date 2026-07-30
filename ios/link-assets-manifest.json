@@ -1,0 +1,13 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/logo.png",
+      "sha1": "3cfb3470605c313cebef40ac6aca6163785749d3"
+    },
+    {
+      "path": "assets/questionario.xml",
+      "sha1": "1f6b7b0151945d8de6c20f9d53f4448525e71974"
+    }
+  ]
+}

@@ -12,7 +12,7 @@ import {
 } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
-import { RootStackParamList } from '../../App';
+import { RootStackParamList } from '../navigation/types';
 import { bleService, DeviceStatus } from '../services/bleService';
 
 type ConnectScreenNavigationProp = StackNavigationProp<RootStackParamList, 'Connect'>;

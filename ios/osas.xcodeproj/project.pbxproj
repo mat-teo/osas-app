@@ -7,23 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0C80B921A6F3F58F76C31292 /* libPods-osas.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-osas.a */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
+		2E90BC6F4B08426F929C6B4E /* questionario.xml in Resources */ = {isa = PBXBuildFile; fileRef = 050717CF7BA44D44A110C6B5 /* questionario.xml */; };
+		52D8F188A7CA41288B94A5CD /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FBCB2B9CB764674BDA1C72F /* logo.png */; };
+		6DE755E69B667F5459484C38 /* libPods-osas.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 81AA1579EE0A045A32767B97 /* libPods-osas.a */; };
 		71EB658FBA1D9DD1250B920D /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */; };
 		761780ED2CA45674006654EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761780EC2CA45674006654EE /* AppDelegate.swift */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		95133F3B301B56580040184C /* anagrafica.xml in Resources */ = {isa = PBXBuildFile; fileRef = 95133F39301B56580040184C /* anagrafica.xml */; };
+		95133F3C301B56580040184C /* berlino.xml in Resources */ = {isa = PBXBuildFile; fileRef = 95133F3A301B56580040184C /* berlino.xml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		050717CF7BA44D44A110C6B5 /* questionario.xml */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = questionario.xml; path = ../assets/questionario.xml; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* osas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = osas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = osas/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = osas/Info.plist; sourceTree = "<group>"; };
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = osas/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		3B4392A12AC88292D35C810B /* Pods-osas.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-osas.debug.xcconfig"; path = "Target Support Files/Pods-osas/Pods-osas.debug.xcconfig"; sourceTree = "<group>"; };
-		5709B34CF0A7D63546082F79 /* Pods-osas.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-osas.release.xcconfig"; path = "Target Support Files/Pods-osas/Pods-osas.release.xcconfig"; sourceTree = "<group>"; };
-		5DCACB8F33CDC322A6C60F78 /* libPods-osas.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-osas.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4FBCB2B9CB764674BDA1C72F /* logo.png */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = logo.png; path = ../assets/logo.png; sourceTree = "<group>"; };
+		62A04964E2122810C156AF80 /* Pods-osas.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-osas.release.xcconfig"; path = "Target Support Files/Pods-osas/Pods-osas.release.xcconfig"; sourceTree = "<group>"; };
 		761780EC2CA45674006654EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = osas/AppDelegate.swift; sourceTree = "<group>"; };
+		81AA1579EE0A045A32767B97 /* libPods-osas.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-osas.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = osas/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		95133F39301B56580040184C /* anagrafica.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = anagrafica.xml; sourceTree = "<group>"; };
+		95133F3A301B56580040184C /* berlino.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = berlino.xml; sourceTree = "<group>"; };
+		D447B56EDADD437B6BDE7102 /* Pods-osas.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-osas.debug.xcconfig"; path = "Target Support Files/Pods-osas/Pods-osas.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -32,7 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C80B921A6F3F58F76C31292 /* libPods-osas.a in Frameworks */,
+				6DE755E69B667F5459484C38 /* libPods-osas.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,9 +63,18 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				5DCACB8F33CDC322A6C60F78 /* libPods-osas.a */,
+				81AA1579EE0A045A32767B97 /* libPods-osas.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5FD17BB7F539499E92977896 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				050717CF7BA44D44A110C6B5 /* questionario.xml */,
+				4FBCB2B9CB764674BDA1C72F /* logo.png */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -75,6 +92,9 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				5FD17BB7F539499E92977896 /* Resources */,
+				95133F39301B56580040184C /* anagrafica.xml */,
+				95133F3A301B56580040184C /* berlino.xml */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -92,8 +112,8 @@
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3B4392A12AC88292D35C810B /* Pods-osas.debug.xcconfig */,
-				5709B34CF0A7D63546082F79 /* Pods-osas.release.xcconfig */,
+				D447B56EDADD437B6BDE7102 /* Pods-osas.debug.xcconfig */,
+				62A04964E2122810C156AF80 /* Pods-osas.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -105,13 +125,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "osas" */;
 			buildPhases = (
-				C38B50BA6285516D6DCD4F65 /* [CP] Check Pods Manifest.lock */,
+				130A742AC9E2A84792541595 /* [CP] Check Pods Manifest.lock */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				00EEFC60759A1932668264C0 /* [CP] Embed Pods Frameworks */,
-				E235C05ADACE081382539298 /* [CP] Copy Pods Resources */,
+				C2B1A07BBDFCD40E762AEFA3 /* [CP] Embed Pods Frameworks */,
+				373165B210B587615E9BB389 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -159,8 +179,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
+				95133F3B301B56580040184C /* anagrafica.xml in Resources */,
+				95133F3C301B56580040184C /* berlino.xml in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				71EB658FBA1D9DD1250B920D /* PrivacyInfo.xcprivacy in Resources */,
+				2E90BC6F4B08426F929C6B4E /* questionario.xml in Resources */,
+				52D8F188A7CA41288B94A5CD /* logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,24 +207,7 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nWITH_ENVIRONMENT=\"$REACT_NATIVE_PATH/scripts/xcode/with-environment.sh\"\nREACT_NATIVE_XCODE=\"$REACT_NATIVE_PATH/scripts/react-native-xcode.sh\"\n\n/bin/sh -c \"\\\"$WITH_ENVIRONMENT\\\" \\\"$REACT_NATIVE_XCODE\\\"\"\n";
 		};
-		00EEFC60759A1932668264C0 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-osas/Pods-osas-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-osas/Pods-osas-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-osas/Pods-osas-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C38B50BA6285516D6DCD4F65 /* [CP] Check Pods Manifest.lock */ = {
+		130A742AC9E2A84792541595 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -222,7 +229,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E235C05ADACE081382539298 /* [CP] Copy Pods Resources */ = {
+		373165B210B587615E9BB389 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -230,13 +237,38 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-osas/Pods-osas-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-osas/Pods-osas-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
+			outputPaths = (
+			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-osas/Pods-osas-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C2B1A07BBDFCD40E762AEFA3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-osas/Pods-osas-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-osas/Pods-osas-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-osas/Pods-osas-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -255,7 +287,7 @@
 /* Begin XCBuildConfiguration section */
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3B4392A12AC88292D35C810B /* Pods-osas.debug.xcconfig */;
+			baseConfigurationReference = D447B56EDADD437B6BDE7102 /* Pods-osas.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -287,7 +319,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5709B34CF0A7D63546082F79 /* Pods-osas.release.xcconfig */;
+			baseConfigurationReference = 62A04964E2122810C156AF80 /* Pods-osas.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

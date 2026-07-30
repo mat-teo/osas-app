@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<questionario>
+  <!-- ======== SEZIONE 1: IDENTIKIT ======== -->
+  <sezione id="identikit" titolo="I tuoi dati" obbligatoria="true">
+    <campo type="text" id="nome" label="Nome" obbligatorio="true" />
+    <campo type="text" id="cognome" label="Cognome" obbligatorio="true" />
+    <campo type="text" id="codice_fiscale" label="Codice Fiscale" obbligatorio="true" />
+    <campo type="date" id="data_nascita" label="Data di nascita" obbligatorio="true" />
+    <campo type="select" id="sesso" label="Sesso" obbligatorio="true">
+      <opzione value="maschio">Maschio</opzione>
+      <opzione value="femmina">Femmina</opzione>
+    </campo>
+    <campo type="number" id="peso" label="Peso (kg)" obbligatorio="true" />
+    <campo type="number" id="altezza" label="Altezza (cm)" obbligatorio="true" />
+    
+    <!-- Condizionale: visibile solo se sesso == femmina -->
+    <campo type="select" id="dolce_attesa" label="Sei in dolce attesa?" condizione="sesso == femmina">
+      <opzione value="no">No</opzione>
+      <opzione value="si">Sì</opzione>
+      <opzione value="non_so">Non so</opzione>
+    </campo>
+  </sezione>
+
+  <!-- ======== SEZIONE 2: ABITUDINI ======== -->
+  <sezione id="abitudini" titolo="Le tue abitudini" obbligatoria="true">
+    <campo type="select" id="fumo" label="Fumi?" obbligatorio="true">
+      <opzione value="mai">Mai fumato</opzione>
+      <opzione value="ex">Ex fumatore</opzione>
+      <opzione value="occasionalmente">Occasionalmente</opzione>
+      <opzione value="quotidianamente">Quotidianamente</opzione>
+    </campo>
+    <campo type="select" id="alcol" label="Consumi alcolici?" obbligatorio="true">
+      <opzione value="mai">Mai</opzione>
+      <opzione value="occasionalmente">Occasionalmente</opzione>
+      <opzione value="regolarmente">Regolarmente</opzione>
+      <opzione value="quotidianamente">Quotidianamente</opzione>
+    </campo>
+    <campo type="select" id="attivita_fisica" label="Pratici attività fisica?" obbligatorio="true">
+      <opzione value="mai">Mai</opzione>
+      <opzione value="1-2">1-2 volte a settimana</opzione>
+      <opzione value="3-4">3-4 volte a settimana</opzione>
+      <opzione value="5+">5+ volte a settimana</opzione>
+    </campo>
+    <campo type="number" id="caffe" label="Quante tazze di caffè al giorno?" obbligatorio="false" />
+  </sezione>
+
+  <!-- ======== SEZIONE 3: QUESTIONARIO BERLINO ======== -->
+  <sezione id="berlino" titolo="Questionario di Berlino" obbligatoria="true" descrizione="Rispondi alle seguenti domande relative al tuo sonno">
+    <domanda id="b1" testo="Russi?" tipo="scelta">
+      <opzione valore="si">Sì</opzione>
+      <opzione valore="no">No</opzione>
+      <opzione valore="non_so">Non so</opzione>
+    </domanda>
+    <domanda id="b2" testo="Il tuo russare è forte?" tipo="scelta">
+      <opzione valore="si">Sì</opzione>
+      <opzione valore="no">No</opzione>
+      <opzione valore="non_so">Non so</opzione>
+    </domanda>
+    <domanda id="b3" testo="Quanto spesso ti senti stanco dopo aver dormito?" tipo="scelta">
+      <opzione valore="mai">Mai</opzione>
+      <opzione valore="raramente">Raramente</opzione>
+      <opzione valore="qualche_volta">Qualche volta</opzione>
+      <opzione valore="spesso">Spesso</opzione>
+      <opzione valore="sempre">Sempre</opzione>
+    </domanda>
+    <domanda id="b4" testo="Hai mai avuto apnea del sonno diagnosticata?" tipo="scelta">
+      <opzione valore="si">Sì</opzione>
+      <opzione valore="no">No</opzione>
+    </domanda>
+    <!-- ... altre domande del test di Berlino ... -->
+  </sezione>
+</questionario>

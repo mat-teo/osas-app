@@ -5,21 +5,21 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 const SELECTED_PROFILE_ID_KEY = '@selected_profile_id';
 const SELECTED_PROFILE_DATA_KEY = '@selected_profile_data';
 
-interface Profilo {
+interface Patient {
   id: number;
-  nome: string;
-  cognome: string;
-  sesso: string;
-  data_nascita: string;
-  altezza: number;
-  peso: number;
-  deviceId: string;
+  first_name: string;
+  last_name: string;
+  gender: string;
+  birth_date: string;
+  height_cm: number;
+  weight_kg: number;
+  device_id: string;
 }
 
 interface AppContextType {
   profileId: number | null;
-  profile: Profilo | null;
-  setProfile: (profile: Profilo | null) => Promise<void>;
+  profile: Patient | null;
+  setProfile: (profile: Patient | null) => Promise<void>;
   setProfileId: (id: number | null) => void;
   clearProfile: () => Promise<void>;
   isLoading: boolean;
@@ -29,7 +29,7 @@ const AppContext = createContext<AppContextType | undefined>(undefined);
 
 export const AppProvider = ({ children }: { children: ReactNode }) => {
   const [profileId, setProfileIdState] = useState<number | null>(null);
-  const [profile, setProfileState] = useState<Profilo | null>(null);
+  const [profile, setProfileState] = useState<Patient | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -52,7 +52,7 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     }
   };
 
-  const setProfile = async (newProfile: Profilo | null) => {
+  const setProfile = async (newProfile: Patient | null) => {
     setProfileState(newProfile);
     if (newProfile) {
       setProfileIdState(newProfile.id);

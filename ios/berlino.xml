@@ -1,0 +1,138 @@
+<QuestionarioModulo IdModulo="37OSAS" Descrizione="Berlino" Tipologia="Scheda OSAS" MedicinaRamo="Odt">
+  <QuestionarioGruppi>
+    <QuestionarioGruppo IdGruppo="81OSAS" IdModulo="37OSAS" Descrizione="Categoria 1" Ordine="0">
+      <QuestionarioDomande>
+        <QuestionarioDomanda IdDomanda="1127OSAS" IdGruppo="81OSAS" Testo="Sei solito russare?" Ordine="0" Denti="false" Valore="false" Arcate="false" Sestanti="false" SiNo="false" DataOra="false" Tendina="true" NomeImmagine="">
+          <RisposteElenco IdDomanda="">
+            <RispostaElenco IdRisposta="5405OSAS" IdDomanda="1127OSAS" Testo="Sì" Ordine="0" />
+            <RispostaElenco IdRisposta="5406OSAS" IdDomanda="1127OSAS" Testo="No" Ordine="1" />
+            <RispostaElenco IdRisposta="5407OSAS" IdDomanda="1127OSAS" Testo="Non so" Ordine="2" />
+          </RisposteElenco>
+        </QuestionarioDomanda>
+        <QuestionarioDomanda IdDomanda="1128OSAS" IdGruppo="81OSAS" Testo="Se russi, il tuo russare è:" Ordine="1" Denti="false" Valore="false" Arcate="false" Sestanti="false" SiNo="false" DataOra="false" Tendina="true" NomeImmagine="">
+          <RisposteElenco IdDomanda="">
+            <RispostaElenco IdRisposta="5408OSAS" IdDomanda="1128OSAS" Testo="Leggermente più forte della respirazione" Ordine="0" />
+            <RispostaElenco IdRisposta="5409OSAS" IdDomanda="1128OSAS" Testo="Più forte di chi parla" Ordine="1" />
+            <RispostaElenco IdRisposta="5410OSAS" IdDomanda="1128OSAS" Testo="Più forte del parlare" Ordine="2" />
+            <RispostaElenco IdRisposta="5411OSAS" IdDomanda="1128OSAS" Testo="Molto alto - può essere ascoltata in stanze adiacenti" Ordine="3" />
+          </RisposteElenco>
+        </QuestionarioDomanda>
+        <QuestionarioDomanda IdDomanda="1129OSAS" IdGruppo="81OSAS" Testo="Ti capita di russare:" Ordine="2" Denti="false" Valore="false" Arcate="false" Sestanti="false" SiNo="false" DataOra="false" Tendina="true" NomeImmagine="">
+          <RisposteElenco IdDomanda="">
+            <RispostaElenco IdRisposta="5412OSAS" IdDomanda="1129OSAS" Testo="Quasi ogni giorno" Ordine="0" />
+            <RispostaElenco IdRisposta="5413OSAS" IdDomanda="1129OSAS" Testo="3-4 volte a settimana" Ordine="1" />
+            <RispostaElenco IdRisposta="5414OSAS" IdDomanda="1129OSAS" Testo="1-2 volte a settimana" Ordine="2" />
+            <RispostaElenco IdRisposta="5415OSAS" IdDomanda="1129OSAS" Testo="1-2 volte al mese" Ordine="3" />
+            <RispostaElenco IdRisposta="5416OSAS" IdDomanda="1129OSAS" Testo="Mai o quasi mai" Ordine="4" />
+          </RisposteElenco>
+        </QuestionarioDomanda>
+        <QuestionarioDomanda IdDomanda="1130OSAS" IdGruppo="81OSAS" Testo="Il tuo russare ha mai disturbato altre persone?" Ordine="3" Denti="false" Valore="false" Arcate="false" Sestanti="false" SiNo="false" DataOra="false" Tendina="true" NomeImmagine="">
+          <RisposteElenco IdDomanda="">
+            <RispostaElenco IdRisposta="5417OSAS" IdDomanda="1130OSAS" Testo="Sì" Ordine="0" />
+            <RispostaElenco IdRisposta="5418OSAS" IdDomanda="1130OSAS" Testo="No" Ordine="1" />
+            <RispostaElenco IdRisposta="5419OSAS" IdDomanda="1130OSAS" Testo="Non so" Ordine="2" />
+          </RisposteElenco>
+        </QuestionarioDomanda>
+        <QuestionarioDomanda IdDomanda="1131OSAS" IdGruppo="81OSAS" Testo="Qualcuno ha notato che interrompi la respirazione durante il sonno?" Ordine="4" Denti="false" Valore="false" Arcate="false" Sestanti="false" SiNo="false" DataOra="false" Tendina="true" NomeImmagine="">
+          <RisposteElenco IdDomanda="">
+            <RispostaElenco IdRisposta="5420OSAS" IdDomanda="1131OSAS" Testo="Quasi ogni giorno" Ordine="0" />
+            <RispostaElenco IdRisposta="5421OSAS" IdDomanda="1131OSAS" Testo="3-4 volte a settimana" Ordine="1" />
+            <RispostaElenco IdRisposta="5422OSAS" IdDomanda="1131OSAS" Testo="1-2 volte a settimana" Ordine="2" />
+            <RispostaElenco IdRisposta="5423OSAS" IdDomanda="1131OSAS" Testo="1-2 volte al mese" Ordine="3" />
+            <RispostaElenco IdRisposta="5424OSAS" IdDomanda="1131OSAS" Testo="Mai o quasi mai" Ordine="4" />
+          </RisposteElenco>
+        </QuestionarioDomanda>
+      </QuestionarioDomande>
+    </QuestionarioGruppo>
+    <QuestionarioGruppo IdGruppo="82OSAS" IdModulo="37OSAS" Descrizione="Categoria 2" Ordine="1">
+      <QuestionarioDomande>
+        <QuestionarioDomanda IdDomanda="1132OSAS" IdGruppo="82OSAS" Testo="Quante volte ti senti stanco o affaticato dopo il sonno notturno?" Ordine="0" Denti="false" Valore="false" Arcate="false" Sestanti="false" SiNo="false" DataOra="false" Tendina="true" NomeImmagine="">
+          <RisposteElenco IdDomanda="">
+            <RispostaElenco IdRisposta="5425OSAS" IdDomanda="1132OSAS" Testo="Quasi ogni giorno" Ordine="0" />
+            <RispostaElenco IdRisposta="5426OSAS" IdDomanda="1132OSAS" Testo="3-4 volte a settimana" Ordine="1" />
+            <RispostaElenco IdRisposta="5427OSAS" IdDomanda="1132OSAS" Testo="1-2 volte a settimana" Ordine="2" />
+            <RispostaElenco IdRisposta="5428OSAS" IdDomanda="1132OSAS" Testo="1-2 volte al mese" Ordine="3" />
+            <RispostaElenco IdRisposta="5429OSAS" IdDomanda="1132OSAS" Testo="Mai o quasi mai" Ordine="4" />
+          </RisposteElenco>
+        </QuestionarioDomanda>
+        <QuestionarioDomanda IdDomanda="1133OSAS" IdGruppo="82OSAS" Testo="Durante il giorno, ti senti stanco, affaticato o svogliato?" Ordine="1" Denti="false" Valore="false" Arcate="false" Sestanti="false" SiNo="false" DataOra="false" Tendina="true" NomeImmagine="">
+          <RisposteElenco IdDomanda="">
+            <RispostaElenco IdRisposta="5430OSAS" IdDomanda="1133OSAS" Testo="Quasi ogni giorno" Ordine="0" />
+            <RispostaElenco IdRisposta="5431OSAS" IdDomanda="1133OSAS" Testo="3-4 volte a settimana" Ordine="1" />
+            <RispostaElenco IdRisposta="5432OSAS" IdDomanda="1133OSAS" Testo="1-2 volte a settimana" Ordine="2" />
+            <RispostaElenco IdRisposta="5433OSAS" IdDomanda="1133OSAS" Testo="1-2 volte al mese" Ordine="3" />
+            <RispostaElenco IdRisposta="5434OSAS" IdDomanda="1133OSAS" Testo="Mai o quasi mai" Ordine="4" />
+          </RisposteElenco>
+        </QuestionarioDomanda>
+        <QuestionarioDomanda IdDomanda="1134OSAS" IdGruppo="82OSAS" Testo="Ti sei mai appisolato o addormentato durante la guida di un veicolo?" Ordine="2" Denti="false" Valore="false" Arcate="false" Sestanti="false" SiNo="false" DataOra="false" Tendina="true" NomeImmagine="">
+          <RisposteElenco IdDomanda="">
+            <RispostaElenco IdRisposta="5435OSAS" IdDomanda="1134OSAS" Testo="Sì" Ordine="0" />
+            <RispostaElenco IdRisposta="5436OSAS" IdDomanda="1134OSAS" Testo="No" Ordine="1" />
+          </RisposteElenco>
+        </QuestionarioDomanda>
+        <QuestionarioDomanda IdDomanda="1135OSAS" IdGruppo="82OSAS" Testo="In caso affermativo della precedente domanda, con quale frequenza si verifica il problema?" Ordine="3" Denti="false" Valore="false" Arcate="false" Sestanti="false" SiNo="false" DataOra="false" Tendina="true" NomeImmagine="">
+          <RisposteElenco IdDomanda="">
+            <RispostaElenco IdRisposta="5437OSAS" IdDomanda="1135OSAS" Testo="Quasi ogni giorno" Ordine="0" />
+            <RispostaElenco IdRisposta="5438OSAS" IdDomanda="1135OSAS" Testo="3-4 volte a settimana" Ordine="1" />
+            <RispostaElenco IdRisposta="5439OSAS" IdDomanda="1135OSAS" Testo="1-2 volte a settimana" Ordine="2" />
+            <RispostaElenco IdRisposta="5440OSAS" IdDomanda="1135OSAS" Testo="1-2 volte al mese" Ordine="3" />
+            <RispostaElenco IdRisposta="5441OSAS" IdDomanda="1135OSAS" Testo="Mai o quasi mai" Ordine="4" />
+          </RisposteElenco>
+        </QuestionarioDomanda>
+      </QuestionarioDomande>
+    </QuestionarioGruppo>
+    <QuestionarioGruppo IdGruppo="83OSAS" IdModulo="37OSAS" Descrizione="Categoria 3" Ordine="2">
+      <QuestionarioDomande>
+        <QuestionarioDomanda IdDomanda="1136OSAS" IdGruppo="83OSAS" Testo="Hai la pressione alta?" Ordine="0" Denti="false" Valore="false" Arcate="false" Sestanti="false" SiNo="false" DataOra="false" Tendina="true" NomeImmagine="">
+          <RisposteElenco IdDomanda="">
+            <RispostaElenco IdRisposta="5442OSAS" IdDomanda="1136OSAS" Testo="Sì" Ordine="0" />
+            <RispostaElenco IdRisposta="5443OSAS" IdDomanda="1136OSAS" Testo="No" Ordine="1" />
+            <RispostaElenco IdRisposta="5444OSAS" IdDomanda="1136OSAS" Testo="Non lo so" Ordine="2" />
+          </RisposteElenco>
+        </QuestionarioDomanda>
+      </QuestionarioDomande>
+    </QuestionarioGruppo>
+  </QuestionarioGruppi>
+  <QuestionarioRispostePunteggio IdModulo="37OSAS">
+    <QuestionarioRispostaPunteggio IdDomanda="1127OSAS" IdModulo="37OSAS" TestoRisp="No" Valore="0" />
+    <QuestionarioRispostaPunteggio IdDomanda="1127OSAS" IdModulo="37OSAS" TestoRisp="Non so" Valore="0" />
+    <QuestionarioRispostaPunteggio IdDomanda="1127OSAS" IdModulo="37OSAS" TestoRisp="Sì" Valore="1" />
+    <QuestionarioRispostaPunteggio IdDomanda="1128OSAS" IdModulo="37OSAS" TestoRisp="Leggermente più forte della respirazione" Valore="0" />
+    <QuestionarioRispostaPunteggio IdDomanda="1128OSAS" IdModulo="37OSAS" TestoRisp="Molto alto - può essere ascoltata in stanze adiacenti" Valore="1" />
+    <QuestionarioRispostaPunteggio IdDomanda="1128OSAS" IdModulo="37OSAS" TestoRisp="Più forte del parlare" Valore="1" />
+    <QuestionarioRispostaPunteggio IdDomanda="1128OSAS" IdModulo="37OSAS" TestoRisp="Più forte di chi parla" Valore="0" />
+    <QuestionarioRispostaPunteggio IdDomanda="1129OSAS" IdModulo="37OSAS" TestoRisp="1-2 volte a settimana" Valore="0" />
+    <QuestionarioRispostaPunteggio IdDomanda="1129OSAS" IdModulo="37OSAS" TestoRisp="1-2 volte al mese" Valore="0" />
+    <QuestionarioRispostaPunteggio IdDomanda="1129OSAS" IdModulo="37OSAS" TestoRisp="3-4 volte a settimana" Valore="1" />
+    <QuestionarioRispostaPunteggio IdDomanda="1129OSAS" IdModulo="37OSAS" TestoRisp="Mai o quasi mai" Valore="0" />
+    <QuestionarioRispostaPunteggio IdDomanda="1129OSAS" IdModulo="37OSAS" TestoRisp="Quasi ogni giorno" Valore="1" />
+    <QuestionarioRispostaPunteggio IdDomanda="1130OSAS" IdModulo="37OSAS" TestoRisp="No" Valore="0" />
+    <QuestionarioRispostaPunteggio IdDomanda="1130OSAS" IdModulo="37OSAS" TestoRisp="Non so" Valore="0" />
+    <QuestionarioRispostaPunteggio IdDomanda="1130OSAS" IdModulo="37OSAS" TestoRisp="Sì" Valore="1" />
+    <QuestionarioRispostaPunteggio IdDomanda="1131OSAS" IdModulo="37OSAS" TestoRisp="1-2 volte a settimana" Valore="0" />
+    <QuestionarioRispostaPunteggio IdDomanda="1131OSAS" IdModulo="37OSAS" TestoRisp="1-2 volte al mese" Valore="0" />
+    <QuestionarioRispostaPunteggio IdDomanda="1131OSAS" IdModulo="37OSAS" TestoRisp="3-4 volte a settimana" Valore="2" />
+    <QuestionarioRispostaPunteggio IdDomanda="1131OSAS" IdModulo="37OSAS" TestoRisp="Mai o quasi mai" Valore="0" />
+    <QuestionarioRispostaPunteggio IdDomanda="1131OSAS" IdModulo="37OSAS" TestoRisp="Quasi ogni giorno" Valore="2" />
+    <QuestionarioRispostaPunteggio IdDomanda="1132OSAS" IdModulo="37OSAS" TestoRisp="1-2 volte a settimana" Valore="0" />
+    <QuestionarioRispostaPunteggio IdDomanda="1132OSAS" IdModulo="37OSAS" TestoRisp="1-2 volte al mese" Valore="0" />
+    <QuestionarioRispostaPunteggio IdDomanda="1132OSAS" IdModulo="37OSAS" TestoRisp="3-4 volte a settimana" Valore="1" />
+    <QuestionarioRispostaPunteggio IdDomanda="1132OSAS" IdModulo="37OSAS" TestoRisp="Mai o quasi mai" Valore="0" />
+    <QuestionarioRispostaPunteggio IdDomanda="1132OSAS" IdModulo="37OSAS" TestoRisp="Quasi ogni giorno" Valore="1" />
+    <QuestionarioRispostaPunteggio IdDomanda="1133OSAS" IdModulo="37OSAS" TestoRisp="1-2 volte a settimana" Valore="0" />
+    <QuestionarioRispostaPunteggio IdDomanda="1133OSAS" IdModulo="37OSAS" TestoRisp="1-2 volte al mese" Valore="0" />
+    <QuestionarioRispostaPunteggio IdDomanda="1133OSAS" IdModulo="37OSAS" TestoRisp="3-4 volte a settimana" Valore="1" />
+    <QuestionarioRispostaPunteggio IdDomanda="1133OSAS" IdModulo="37OSAS" TestoRisp="Mai o quasi mai" Valore="0" />
+    <QuestionarioRispostaPunteggio IdDomanda="1133OSAS" IdModulo="37OSAS" TestoRisp="Quasi ogni giorno" Valore="1" />
+    <QuestionarioRispostaPunteggio IdDomanda="1134OSAS" IdModulo="37OSAS" TestoRisp="No" Valore="0" />
+    <QuestionarioRispostaPunteggio IdDomanda="1134OSAS" IdModulo="37OSAS" TestoRisp="Sì" Valore="1" />
+    <QuestionarioRispostaPunteggio IdDomanda="1135OSAS" IdModulo="37OSAS" TestoRisp="1-2 volte a settimana" Valore="0" />
+    <QuestionarioRispostaPunteggio IdDomanda="1135OSAS" IdModulo="37OSAS" TestoRisp="1-2 volte al mese" Valore="0" />
+    <QuestionarioRispostaPunteggio IdDomanda="1135OSAS" IdModulo="37OSAS" TestoRisp="3-4 volte a settimana" Valore="0" />
+    <QuestionarioRispostaPunteggio IdDomanda="1135OSAS" IdModulo="37OSAS" TestoRisp="Mai o quasi mai" Valore="0" />
+    <QuestionarioRispostaPunteggio IdDomanda="1135OSAS" IdModulo="37OSAS" TestoRisp="Quasi ogni giorno" Valore="0" />
+    <QuestionarioRispostaPunteggio IdDomanda="1136OSAS" IdModulo="37OSAS" TestoRisp="No" Valore="0" />
+    <QuestionarioRispostaPunteggio IdDomanda="1136OSAS" IdModulo="37OSAS" TestoRisp="Non lo so" Valore="0" />
+    <QuestionarioRispostaPunteggio IdDomanda="1136OSAS" IdModulo="37OSAS" TestoRisp="Sì" Valore="2" />
+  </QuestionarioRispostePunteggio>
+</QuestionarioModulo>

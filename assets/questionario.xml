@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<questionario>
+  <sezione id="identikit" titolo="I tuoi dati">
+    <campo type="text" id="nome" label="Nome" obbligatorio="true" />
+    <campo type="text" id="cognome" label="Cognome" obbligatorio="true" />
+    <campo type="text" id="codice_fiscale" label="Codice Fiscale" obbligatorio="true" />
+    <campo type="date" id="data_nascita" label="Data di nascita" obbligatorio="true" />
+    <campo type="number" id="peso" label="Peso (kg)" obbligatorio="true" />
+    <campo type="number" id="altezza" label="Altezza (cm)" obbligatorio="true" />
+    <campo type="select" id="sesso" label="Sesso" obbligatorio="true">
+      <opzione value="maschio">Maschio</opzione>
+      <opzione value="femmina">Femmina</opzione>
+    </campo>
+    <!-- Luogo di nascita (opzionale per ora, lo aggiungo già) -->
+    <campo type="text" id="luogo_nascita" label="Luogo di nascita" obbligatorio="false" />
+  </sezione>
+  <sezione id="abitudini" titolo="Le tue abitudini">
+    <campo type="select" id="fumo" label="Fumi?">
+      <opzione value="mai">Mai fumato</opzione>
+      <opzione value="ex">Ex fumatore</opzione>
+      <opzione value="occasionalmente">Occasionalmente</opzione>
+      <opzione value="quotidianamente">Quotidianamente</opzione>
+    </campo>
+    <campo type="select" id="alcol" label="Consumi alcolici?">
+      <opzione value="mai">Mai</opzione>
+      <opzione value="occasionalmente">Occasionalmente</opzione>
+      <opzione value="regolarmente">Regolarmente</opzione>
+      <opzione value="quotidianamente">Quotidianamente</opzione>
+    </campo>
+  </sezione>
+  <sezione id="berlino" titolo="Questionario di Berlino">
+    <campo type="select" id="b1" label="Russi?">
+      <opzione value="si">Sì</opzione>
+      <opzione value="no">No</opzione>
+      <opzione value="non_so">Non so</opzione>
+    </campo>
+    <campo type="select" id="b2" label="Il tuo russare è forte?">
+      <opzione value="si">Sì</opzione>
+      <opzione value="no">No</opzione>
+      <opzione value="non_so">Non so</opzione>
+    </campo>
+  </sezione>
+</questionario>
