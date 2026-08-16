@@ -9,13 +9,15 @@ export interface Answer {
 
 export interface Question {
   id: string;
+  originalId?: string; 
   groupId: string;
   text: string;
   order: number;
   isDropdown: boolean;
   isRequired: boolean;
-  type: 'text' | 'number' | 'date' | 'select';
+  type: 'text' | 'number' | 'date' | 'select' | 'guardian_select'; // 👈 Aggiunto guardian_select
   condition?: string;
+  isEditable?: boolean;
   answers: Answer[];
 }
 
@@ -52,6 +54,7 @@ export interface UserProfile {
   weight: number;
   height: number;
   isAdult: boolean;
+  guardianId?: string; 
   birthPlace?: string;
   isPregnant?: string;
   smoking?: string;
@@ -64,4 +67,23 @@ export interface UserProfile {
 
 export interface QuestionnaireAnswers {
   [questionId: string]: string;
+}
+export interface ProfileSnapshot {
+  weight: number;
+  height: number;
+  isPregnant?: string;
+  smoking?: string;
+  alcohol?: string;
+  physicalActivity?: string;
+  coffee?: number;
+}
+
+export interface SavedQuestionnaireResult {
+  id: string;
+  profileId: string;
+  moduleType: string;
+  answers: Record<string, string>;
+  score?: number;
+  snapshot: ProfileSnapshot; 
+  submittedAt: string;
 }

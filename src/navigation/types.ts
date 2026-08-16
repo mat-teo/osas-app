@@ -1,5 +1,6 @@
 // src/navigation/types.ts
 import { StackNavigationProp } from '@react-navigation/stack';
+import { ProfileSnapshot } from '../types';
 
 export type RootStackParamList = {
   Splash: undefined;
@@ -7,7 +8,8 @@ export type RootStackParamList = {
   NuovoProfilo: undefined;
   Questionario: { 
     profileId?: string; 
-    tipo?: 'anagrafica' | 'berlino'; // 🔥 AGGIUNTO
+    tipo?: 'anagrafica' | 'berlino'; 
+    snapshot?: ProfileSnapshot;
   };
   Connect: { profileId?: number };
   Home: { serial: string };

@@ -42,7 +42,7 @@ const ProfilesListScreen = () => {
   const handleSelectProfile = (profile: UserProfile) => {
     navigation.navigate('Questionario', {
       profileId: profile.id,
-      tipo: 'berlino', // Vai direttamente al questionario Berlino
+      tipo: 'anagrafica', // Vai direttamente al questionario Berlino
     });
   };
 
@@ -88,7 +88,7 @@ const ProfilesListScreen = () => {
             {item.firstName} {item.lastName}
           </Text>
           <Text style={styles.profileDetails}>
-            {item.isAdult ? '✅ Maggiorenne' : '🔞 Minorenne'} • {age} anni
+            {item.isAdult ? ' Maggiorenne' : 'Minorenne'} • {age} anni
           </Text>
           <Text style={styles.profileDetails}>
             📅 {item.birthDate} • ⚖️ {item.weight}kg • 📏 {item.height}cm
@@ -124,7 +124,7 @@ const ProfilesListScreen = () => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.title}>👤 I tuoi profili</Text>
+        <Text style={styles.title}>I tuoi profili</Text>
         <Text style={styles.subtitle}>
           Seleziona un profilo per rispondere al questionario
         </Text>

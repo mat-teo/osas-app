@@ -3,22 +3,25 @@ import { Question, Group, Answer, Score, QuestionnaireModule } from '../types';
 
 const { parseString } = require('react-native-xml2js');
 
+export const normalizeKey = (text: string): string => {
+  if (!text) return '';
+  return text
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]/g, '_')
+    .replace(/_+/g, '_')
+    .replace(/^_+|_+$/g, '');
+};
+
 const parseAnswers = (rawAnswers: any[]): Answer[] => {
   if (!Array.isArray(rawAnswers)) rawAnswers = [rawAnswers];
   return rawAnswers.map((a: any) => ({
     id: a.$?.IdRisposta || '',
     questionId: a.$?.IdDomanda || '',
-    text: a._ || '',
-    order: parseInt(a.$?.Ordine) || 0,
+    text: a.$?.Testo || a._ || '', 
+    order: parseInt(a.$?.Ordine, 10) || 0,
   }));
-};
-
-const normalizeKey = (text: string): string => {
-  return text
-    .toLowerCase()
-    .replace(/[^a-z0-9]/g, '_') // sostituisce tutto ciò che non è lettera/numero con _
-    .replace(/_+/g, '_') // rimuove duplicati
-    .replace(/^_|_$/g, ''); // rimuove underscore all'inizio/fine
 };
 
 const parseQuestions = (rawQuestions: any[]): Question[] => {
@@ -26,19 +29,23 @@ const parseQuestions = (rawQuestions: any[]): Question[] => {
   return rawQuestions.map((q: any) => {
     const attrs = q.$ || {};
     const rawAnswers = q?.RisposteElenco?.[0]?.RispostaElenco || [];
+    const textKey = normalizeKey(attrs.Testo || '');
     
-    const key = normalizeKey(attrs.Testo || '');
-    
+    // Controlla l'attributo "Modificabile" dall'XML
+    // Se è "false" imposta isEditable = false, altrimenti di default è true
+    const isEditable = attrs.Modificabile !== undefined ? attrs.Modificabile === 'true' : true;
+
     return {
-      id: key, // 'nome', 'cognome', 'data_di_nascita', ecc.
+      id: attrs.IdDomanda || textKey,
       originalId: attrs.IdDomanda || '',
       groupId: attrs.IdGruppo || '',
       text: attrs.Testo || '',
-      order: parseInt(attrs.Ordine) || 0,
+      order: parseInt(attrs.Ordine, 10) || 0,
       isDropdown: attrs.Tendina === 'true',
       isRequired: attrs.Obbligatorio === 'true',
       type: attrs.Tipo || (attrs.Tendina === 'true' ? 'select' : 'text'),
       condition: attrs.Condizione || '',
+      isEditable: isEditable, 
       answers: parseAnswers(rawAnswers),
     };
   });
@@ -53,7 +60,7 @@ const parseGroups = (rawGroups: any[]): Group[] => {
       id: attrs.IdGruppo || '',
       moduleId: attrs.IdModulo || '',
       title: attrs.Descrizione || '',
-      order: parseInt(attrs.Ordine) || 0,
+      order: parseInt(attrs.Ordine, 10) || 0,
       questions: parseQuestions(rawQuestions),
     };
   });
@@ -65,7 +72,7 @@ const parseScores = (rawScores: any[]): Score[] => {
     questionId: s.$?.IdDomanda || '',
     moduleId: s.$?.IdModulo || '',
     answerText: s.$?.TestoRisp || '',
-    value: parseInt(s.$?.Valore) || 0,
+    value: parseInt(s.$?.Valore, 10) || 0,
   }));
 };
 
